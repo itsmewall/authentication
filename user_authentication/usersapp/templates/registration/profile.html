@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil de Usuário</title>
+</head>
+<body>
+    <!-- Seção de informações do usuário -->
+<h2>Perfil de Usuário</h2>
+<p><strong>Nome de Usuário:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>Idade:</strong> {{ user.age }}</p>
+<p><strong>Gênero:</strong> {{ user.gender }}</p>
+<p><strong>Título do Trabalho:</strong> {{ user.jobTitle }}</p>
+<p><strong>Biografia:</strong> {{ user.bio }}</p>
+
+<!-- Formulário de edição de perfil -->
+<h2>Editar Perfil</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Salvar Alterações</button>
+</form>
+
+<a href="{% url 'logout' %}">Sair</a>
+
+</body>
+</html>
