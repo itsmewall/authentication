@@ -2,10 +2,69 @@
 <html>
 <head>
     <title>Login</title>
+    <style>
+        /* styles.css */
+
+/* Estilo para o cabeçalho (título) */
+h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para os links */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Estilo para os links de registro/login */
+p a {
+    font-weight: bold;
+}
+
+/* Estilo para o formulário */
+form {
+    margin-top: 20px;
+}
+
+/* Estilo para os campos de entrada de texto */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo para o botão de envio do formulário */
+form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de retorno à página de registro/login */
+form p a {
+    color: #007bff;
+    font-weight: bold;
+}
+    </style>
 </head>
 <body>
     <h2>Login</h2>
-    <form method="post">
+    <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
 
